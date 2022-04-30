@@ -6,14 +6,16 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:46:17 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/04/15 14:18:20 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:29:43 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "PhoneBook.hpp"
 
 int main()
 {
 	std::string	input;
-	Phonebook book;
+	PhoneBook book;
 
 	while (true)
 	{
