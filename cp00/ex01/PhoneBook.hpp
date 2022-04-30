@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:58:55 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/04/30 19:50:20 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/04/30 20:42:25 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 class PhoneBook
@@ -25,6 +26,7 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
+		std::string	truncate(std::string str) const;
 		void get_c();
 		void add_c();
 };
