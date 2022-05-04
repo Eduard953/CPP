@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 18:36:37 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/04 19:45:50 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:46:57 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed {
 		~Fixed();
 		Fixed &operator=(Fixed const &src);
 
-		int	getRawBits() const;
+		int		getRawBits() const;
 		void	setRawBits(int const raw);
 };
 
