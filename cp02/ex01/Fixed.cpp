@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 19:35:28 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/04 20:08:21 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:30:18 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	Fixed::getRawBits() const
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_value = raw * (1 << this->_bits);
+	this->_value = raw;
 }
 
 float	Fixed::toFloat() const

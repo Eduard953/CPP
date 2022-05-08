@@ -14,13 +14,13 @@ ClapTrap::ClapTrap(std::string const name): _name(name), _hitPoints(10), _energy
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-	std::cout << "ClapTrap copy constructor called" << std::endl;
+	std::cout << "Trap copy constructor called" << std::endl;
 	*this = obj;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
 {
-	std::cout << "ClapTrap assignment operator called" << std::endl;
+	std::cout << "Trap assignment operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->_attackDamage = obj.getAttackDamage();
@@ -33,7 +33,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->_name << " destructor called" << std::endl;
+	std::cout << "Trap " << this->_name << " destructor called" << std::endl;
 }
 
 //	MEMBER FUNCTIONS
@@ -72,7 +72,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (this->getHitPoints() > 0)
 	{
 		this->_hitPoints -= amount;
-		std::cout << "ClapTrap " << this->getName() << " takes " << amount << " damage!" << std::endl;
+		std::cout << "Trap " << this->getName() << " takes " << amount << " damage!" << std::endl;
 	}
 }
 
@@ -82,6 +82,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_hitPoints += amount;
 		this->_energyPoints--;
-		std::cout << "ClapTrap " << this->getName() << " is repaired by " << amount << " points!" << std::endl;
+		std::cout << "Trap " << this->getName() << " is repaired by " << amount << " points!" << std::endl;
 	}
 }
