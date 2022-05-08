@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 18:43:18 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/08 11:33:48 by ebeiline         ###   ########.fr       */
+/*   Created: 2022/05/07 18:57:21 by ebeiline          #+#    #+#             */
+/*   Updated: 2022/05/07 19:30:40 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+	#define SCAVTRAP_HPP
 
-int main (void)
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap clap("ash");
-	FragTrap frag("frag");
-	ScavTrap scav("scav");
-	clap.takeDamage(9);
-	clap.beRepaired(9);
-	clap.attack("someone");
-	frag.highFiveGuys();
-	frag.takeDamage(9);
-	frag.beRepaired(9);
-	frag.attack("Target");
-	scav.guardGate();
-	scav.takeDamage(9);
-	scav.beRepaired(9);
-	scav.attack("Target");
-	return (0);
-}
+	public:
+		ScavTrap();
+		ScavTrap(ScavTrap const &source);
+		ScavTrap(std::string const name);
+		~ScavTrap();
+		ScavTrap &operator=(ScavTrap const &right);
+		void guardGate();
+		void attack(std::string const &target);
+};
+
+#endif // SCAVTRAP_HPP
