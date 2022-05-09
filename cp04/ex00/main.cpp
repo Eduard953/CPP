@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:48:04 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 12:09:27 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:12:32 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ int main(void)
 	delete j;
 	delete meta;
 	
-	std::cout << "\n\n" << std::endl;
-	const WrongAnimal* meta2 = new WrongAnimal();
-	const WrongCat* i2 = new WrongCat();
+	std::cout << "\n\nWrongAnimals\n" << std::endl;
+	WrongAnimal* meta2 = new WrongAnimal();
+	WrongAnimal* i2 = new WrongCat();
 
 	std::cout << "WrongAnimal type is " << meta2->getType() << " " << std::endl;
 	std::cout << "WrongAnimal type is " << i2->getType() << " " << std::endl;
 	i2->makeSound(); //will output the wrong cat sound!
 	meta2->makeSound(); //will output the wrong animal sound!
+
 
 	delete i2;
 	delete meta2;
