@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 11:32:01 by ebeiline          #+#    #+#             */
+/*   Updated: 2022/05/09 11:57:53 by ebeiline         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+	# define DOG_HPP
+
+#include "Animal.hpp"
+
+class Dog : public Animal
+{
+	public:
+		Dog();
+		Dog(const Dog &obj);
+		Dog& operator=(const Dog &obj);
+		~Dog();
+
+		void makeSound() const;
+};
+
+#endif //DOG_HPP
