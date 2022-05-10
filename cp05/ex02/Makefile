@@ -6,12 +6,12 @@
 #    By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 18:18:47 by ebeiline          #+#    #+#              #
-#    Updated: 2022/05/10 12:42:40 by ebeiline         ###   ########.fr        #
+#    Updated: 2022/05/10 12:55:24 by ebeiline         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = exec
-SRC = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 FLAG = -Wall -Wextra -Werror
 
 STD_FLAG =  -std=c++98

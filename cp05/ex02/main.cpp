@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:19:11 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 12:45:41 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:56:24 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main(void)
 {
@@ -24,6 +25,8 @@ int main(void)
 	PresidentialPardonForm pres;
 	ShrubberyCreationForm shrub;
 	ShrubberyCreationForm shrub2("shrub2");
+	RobotomyRequestForm rob;
+	
 
 	std::cout << std::endl;
 	
@@ -47,12 +50,17 @@ int main(void)
 	zel.signForm(pres);
 	zel.signForm(shrub);
 	zel.signForm(shrub2);
+	zel.signForm(rob);
 
 	pres.execute(zel);
 	shrub.execute(zel);
 	shrub2.execute(zel);
 	
 	std::cout << std::endl;
-		
+	
+	rob.execute(zel);
+	rob.execute(zel);
+	rob.execute(zel);
+
 	return (0);
 }
