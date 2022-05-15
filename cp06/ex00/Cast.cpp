@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 19:23:21 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/11 19:31:29 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/15 13:06:09 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Cast::Cast(): _out(0)
 {
-	std::cout << "Defualt Constructor called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 Cast::Cast(std::string const &input):
@@ -40,7 +40,7 @@ Cast::~Cast()
 
 Cast &Cast::operator=(const Cast &rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Assignment operator called" << std::endl;
 	this->_out = rhs.getOut();
 	return (*this);
 }
@@ -51,3 +51,6 @@ double Cast::getOut() const
 {
 	return (this->_out);
 }
+
+// MEMBERS
+
