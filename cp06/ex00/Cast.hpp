@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 19:21:51 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/11 19:31:15 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:21:01 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ class Cast
 		Cast(const Cast &src);
 		Cast &operator=(const Cast &rhs);
 
-		double getOut() const;
+		double	getOut() const;
+		void	printChar(std::ostream o, Cast const &i) const;
+		void	printInt(std::ostream o, Cast const &i) const;
+		void	printFloat(std::ostream o, Cast const &i) const;
+		void	printDouble(std::ostream o, Cast const &i) const;
 };
+
+std::ostream &operator<<(std::ostream &o, Cast const &i);
 
 #endif // CAST_HPP
