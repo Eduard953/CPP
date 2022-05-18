@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 19:23:21 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/18 12:24:48 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:21:55 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,25 @@ Cast::Cast(): _out(0)
 Cast::Cast(std::string const &input)
 {
 	std::cout << "Constructor called" << std::endl;
-	this->_out = std::stod(input.c_str(), NULL);
+	try
+	{
+		this->_out = std::stod(input.c_str(), NULL);
+	}
+	catch(std::invalid_argument &ia)
+	{
+		if (input.length() == 1)
+			this->_out = static_cast<double>(input.front());
+		else
+		{
+			std::cerr << "Conversions not possible" << std::endl;
+			exit(1);
+		}
+	}
+	catch(std::out_of_range &oor)
+	{
+		std::cerr << "Input out of double range" << std::endl;
+		exit(1);
+	}
 }
 
 Cast::Cast(const Cast &src)
@@ -47,10 +65,10 @@ Cast &Cast::operator=(const Cast &rhs)
 
 std::ostream &operator<<(std::ostream &o, Cast const &i)
 {
-	Cast::printChar(i, o);
-	Cast::printInt(i, o);
-	Cast::printFloat(i, o);
-	Cast::printDouble(i, o);
+	o << i.printChar();
+	o << i.printInt();
+	o << i.printFloat();
+	o << i.printDouble();
 	return (o);
 }
 
@@ -63,62 +81,68 @@ double Cast::getOut() const
 
 // MEMBERS
 
-Cast::printChar(std::ostream o, Cast const &i) const
+std::string Cast::printChar() const
 {
-	o << "char: ";
+	std::string out = "char: ";
 	try
 	{
-		char c = static_cast<char>(i);
-		std::isprint(c) ? o << c : o << "Non displayable";
+		char c = static_cast<char>(this->getOut());
+		if (isnan(this->_out) || this->_out > static_cast<double>(CHAR_MAX) || this->_out < static_cast<double>(CHAR_MIN))
+			out += "impossible";
+		else
+			std::isprint(c) ? out += c : out += "Non displayable";
 	}
 	catch(const std::exception& e)
 	{
-		o << "impossible: " << e.what();
+		out += "impossible: " + std::string(e.what());
 	}
-	o << std::endl;
+	return (out + "\n");
 }
 
-Cast::printInt(std::ostream o, Cast const &i) const
+std::string Cast::printInt() const
 {
-	o << "int: ";
+	std::string out = "int: ";
 	try
 	{
-		int i = static_cast<int>(i);
-		o << i;
+		int i = static_cast<int>(this->getOut());
+		if (isnan(this->_out) || this->_out > static_cast<double>(INT_MAX) || this->_out < static_cast<double>(INT_MIN))
+			out += "impossible";
+		else
+			out += std::to_string(i);
 	}
 	catch(const std::exception& e)
 	{
-		o << "impossible: " << e.what();
+		out += "impossible: " + std::string(e.what());
 	}
-	o << std::endl;
+	return (out + "\n");
 }
 
-Cast::printFloat(std::ostream o, Cast const &i) const
+std::string Cast::printFloat() const
 {
-	o << "float: ";
+	std::string out = "float: ";
 	try
 	{
-		float f = static_cast<float>(f);
-		o << f;
+		float f = static_cast<float>(this->getOut());
+		out += std::to_string(f) + "f";
 	}
 	catch(const std::exception& e)
 	{
-		o << "impossible: " << e.what();
+		out += "impossible: " + std::string(e.what());
 	}
-	o << std::endl;
+	return (out + "\n");
 }
 
-Cast::printDouble(std::ostream o, Cast const &i) const
+std::string Cast::printDouble() const
 {
-	o << "double: ";
+	std::string out = "double: ";
 	try
 	{
-		double d = static_cast<double>(d);
-		o << d;
+		double d = static_cast<double>(this->getOut());
+		out += std::to_string(d);
 	}
 	catch(const std::exception& e)
 	{
-		o << "impossible: " << e.what();
+		out += "impossible: " + std::string(e.what());
 	}
-	o << std::endl;
+	return (out + "\n");
 }
