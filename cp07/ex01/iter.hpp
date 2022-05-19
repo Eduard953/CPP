@@ -6,17 +6,32 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:41:15 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/18 20:43:50 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:52:45 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 	#define ITER_HPP
 
+#include <iostream>
+
 template <typename T>
-void iter(T *arr, size_t size, void (*f)(T &))
+void iter(T *arr, int size, void (*f)(T &))
 {
-	for (size_t i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)
 		f(arr[i]);
 }
 
+template <typename T>
+void add(T a)
+{
+	a++;
+}
+
+template <typename T>
+void print(T a)
+{
+	std::cout << a << "; ";
+}
+
+#endif // ITER_HPP
