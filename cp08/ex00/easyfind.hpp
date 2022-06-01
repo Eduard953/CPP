@@ -6,10 +6,13 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:00:38 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/06/01 14:33:05 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:41:03 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HPP
+	#define EASYFIND_HPP
+	
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -18,9 +21,6 @@
 #include <list>
 #include <set>
 #include <deque>
-
-#ifndef EASYFIND_HPP
-	#define EASYFIND_HPP
 
 class NotFoundException: public std::exception
 {
