@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:37:15 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/06/03 17:47:38 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/06/04 11:33:26 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
 
 class Span
 {
@@ -30,6 +32,7 @@ class Span
 		Span &operator=(Span const &rhs);
 
 		void addNumber(int num);
+		void addNumbers(std::vector<int> v);
 		int shortestSpan(void);
 		int longestSpan(void);
 
@@ -47,6 +50,14 @@ class Span
 				const char *what() const throw()
 				{
 					return "Not enough elements for span.";
+				}
+		};
+		class NoStorageException: public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return "No storage allocated";
 				}
 		};
 };
