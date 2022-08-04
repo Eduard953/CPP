@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 19:23:21 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/18 14:21:55 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:07:52 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cast::Cast(std::string const &input)
 	std::cout << "Constructor called" << std::endl;
 	try
 	{
-		this->_out = std::stod(input.c_str(), NULL);
+		this->_out = strtod(input.c_str(), 0);
 	}
 	catch(std::invalid_argument &ia)
 	{
