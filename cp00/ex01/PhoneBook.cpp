@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:55:56 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/04/30 20:45:39 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/25 22:27:17 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,22 @@ void PhoneBook::get_c()
 		return ;
 	}
 	std::cout << "     index|first name| last name|  nickname" << std::endl;
-	for (int i = 0; i < this->_num; i++)
-	{
-		std::cout << std::setw(10) << i 
-		<< "|" << std::setw(10) << this->truncate(_phonebook[i].get_fname())
-		<< "|" << std::setw(10) << this->truncate(_phonebook[i].get_lname())
-		<< "|" << std::setw(10) << this->truncate(_phonebook[i].get_nicname()) << std::endl;
-	}
+	if (this->_num < 7)
+		for (int i = 0; i < this->_num ; i++)
+		{
+			std::cout << std::setw(10) << i 
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_fname())
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_lname())
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_nicname()) << std::endl;
+		}
+	else
+		for (int i = 0; i < 8 ; i++)
+		{
+			std::cout << std::setw(10) << i 
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_fname())
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_lname())
+			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_nicname()) << std::endl;
+		}
 	std::cout << "Please enter the index of the contact you want to see" << std::endl;
 	while(id.empty())
 		std::getline(std::cin, id);
