@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:55:56 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/08/25 22:27:17 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/26 22:39:17 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void PhoneBook::get_c()
 		return ;
 	}
 	std::cout << "     index|first name| last name|  nickname" << std::endl;
-	if (this->_num < 7)
+	if (this->_num < 8)
 		for (int i = 0; i < this->_num ; i++)
 		{
-			std::cout << std::setw(10) << i 
+			std::cout << std::setw(10) << i + 1 
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_fname())
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_lname())
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_nicname()) << std::endl;
@@ -93,7 +93,7 @@ void PhoneBook::get_c()
 	else
 		for (int i = 0; i < 8 ; i++)
 		{
-			std::cout << std::setw(10) << i 
+			std::cout << std::setw(10) << i + 1
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_fname())
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_lname())
 			<< "|" << std::setw(10) << this->truncate(_phonebook[i % 8].get_nicname()) << std::endl;
@@ -101,15 +101,15 @@ void PhoneBook::get_c()
 	std::cout << "Please enter the index of the contact you want to see" << std::endl;
 	while(id.empty())
 		std::getline(std::cin, id);
-	id_int = std::stoi(id);
-	if (id_int < 0 || id_int > (this->_num - 1) % 8)
+	id_int = atoi(id.c_str());
+	if (id_int <= 0 || id_int > (this->_num) || id_int > 8)
 		std::cout << "Invalid index" << std::endl;
 	else
 	{
-		std::cout << "First name: " << this->_phonebook[id_int].get_fname() << std::endl;
-		std::cout << "Last name: " << this->_phonebook[id_int].get_lname() << std::endl;
-		std::cout << "Nickname: " << this->_phonebook[id_int].get_nicname() << std::endl;
-		std::cout << "Phone number: " << this->_phonebook[id_int].get_num() << std::endl;
-		std::cout << "Darkest secret: " << this->_phonebook[id_int].get_secr() << std::endl;
+		std::cout << "First name: " << this->_phonebook[id_int - 1].get_fname() << std::endl;
+		std::cout << "Last name: " << this->_phonebook[id_int - 1].get_lname() << std::endl;
+		std::cout << "Nickname: " << this->_phonebook[id_int - 1].get_nicname() << std::endl;
+		std::cout << "Phone number: " << this->_phonebook[id_int - 1].get_num() << std::endl;
+		std::cout << "Darkest secret: " << this->_phonebook[id_int - 1].get_secr() << std::endl;
 	}
 }
