@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:32:01 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 13:45:24 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:42:13 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Dog : public Animal
 		Dog();
 		Dog(const Dog &obj);
 		Dog& operator=(const Dog &obj);
-		~Dog();
+		virtual ~Dog();
 
-		void makeSound() const;
+		virtual void makeSound() const;
 };
 
 #endif //DOG_HPP

@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:32:01 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 13:45:58 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:42:27 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat &obj);
 		Cat& operator=(const Cat &obj);
-		~Cat();
+		virtual ~Cat();
 
-		void makeSound() const;
+		virtual void makeSound() const;
 };
 
 #endif //CAT_HPP
