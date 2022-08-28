@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:48:04 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 14:00:45 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:45:07 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(void)
 	
 	delete j;
 	delete i;
+
+	//Animal test;
 	
 	return 0;
 }
