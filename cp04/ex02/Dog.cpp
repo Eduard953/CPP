@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:56:40 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 13:45:03 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:38:02 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Dog::Dog(const Dog &obj)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called" << std::endl;
+	delete this->_brain;
 }
 
 // OPERATORS
@@ -39,6 +40,7 @@ Dog& Dog::operator=(const Dog &obj)
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &obj)
 		this->_type = obj.getType();
+		this->_brain = new Brain(*obj._brain);
 	return *this;
 }
 
