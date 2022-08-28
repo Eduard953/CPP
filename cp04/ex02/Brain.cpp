@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:28:35 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/09 13:47:33 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:38:42 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,9 @@ Brain& Brain::operator=(const Brain &obj)
 std::string *Brain::getIdeas()
 {
 	return (this->_ideas);
+}
+
+void Brain::setIdeas( const std::string* _ideas )
+{
+	std::copy(_ideas, _ideas + 100, this->_ideas);
 }
