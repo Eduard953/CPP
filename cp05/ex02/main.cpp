@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:19:11 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 12:56:24 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:13:23 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
 	
 	std::cout << put << std::endl;
 	std::cout << zel << std::endl;
-	std::cout << "Form grade is " << pres.getGradeToSign() << std::endl;
+	std::cout << pres << std::endl;
 
 	std::cout << std::endl;
 	
