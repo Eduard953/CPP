@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:58:57 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 10:50:59 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 13:59:26 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ class Form
 
 		void beSigned(Bureaucrat &bureaucrat);
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& obj);
 
 #endif //FORM_HPP
