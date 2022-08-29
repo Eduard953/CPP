@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:32:26 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 10:41:18 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:22:56 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ public:
 	void				decrementGrade();
 
 	void				signForm(Form &form);
+	void				executeForm(Form const & form);
 };
 
 std::ostream& operator<<(std::ostream &stream, Bureaucrat const &ref);

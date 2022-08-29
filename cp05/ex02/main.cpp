@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:19:11 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/08/29 14:13:23 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:29:20 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,17 @@ int main(void)
 	zel.signForm(shrub);
 	zel.signForm(shrub2);
 	zel.signForm(rob);
-
+	
+	std::cout << std::endl;
+	
+	put.executeForm(pres);
+	zel.executeForm(pres);
+	zel.executeForm(shrub);
+	zel.executeForm(shrub2);
+	zel.executeForm(rob);
+	
+	std::cout << std::endl;
+	
 	pres.execute(zel);
 	shrub.execute(zel);
 	shrub2.execute(zel);
