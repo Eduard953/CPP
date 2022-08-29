@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:45:51 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 10:35:24 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:38:15 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,24 @@ void Bureaucrat::signForm(Form &form)
 	catch(const std::exception& e)
 	{
 		std::cerr << this->getName() << " couldn't sign form " << form.getName() << " because " << e.what() << '\n';
+	}	
+}
+
+void Bureaucrat::executeForm( Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
-	
+	catch(Form::GradeTooHighException & e)
+	{
+		std::cout << "Rejected execution: " << e.what() << std::endl;
+	}
+	catch(Form::GradeTooLowException & e)
+	{
+		std::cout << "Rejected execution: " << e.what() << std::endl;
+	}
 }
 
 // EXCEPTIONS

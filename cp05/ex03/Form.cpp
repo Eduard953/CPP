@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 10:18:10 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/10 10:51:42 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:31:58 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,10 @@ char const *Form::GradeTooHighException::what() const throw()
 char const *Form::GradeTooLowException::what() const throw()
 {
 	return "Grade too low";
+}
+
+std::ostream& operator<<(std::ostream& os, const Form& obj){
+	std::string sign;
+	sign = obj.getSigned() ? "signed" : "not signed";
+	return (os << "Form " << obj.getName() << ", Status:" << sign << std::endl << "Min grade to sign: " << obj.getGradeToSign() << ", Min grade to execute: " << obj.getGradeToExecute() <<  std::endl);
 }
