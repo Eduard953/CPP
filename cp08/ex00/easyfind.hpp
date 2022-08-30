@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:00:38 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/06/01 15:41:03 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/30 15:09:38 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <algorithm>
 #include <vector>
 #include <map>
-#include <array>
 #include <list>
 #include <set>
 #include <deque>

@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:59:24 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/06/01 14:31:36 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/30 15:09:27 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,6 @@
 
 int main(void)
 {	
-	std::cout << "test array" << std::endl;
-	std::array<int, 10> arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	easyfind(arr, 6);
-	try
-	{
-		easyfind(arr, 25);
-	}
-	catch	(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "****************************************" << std::endl;
-	
 	std::cout << "test vector" << std::endl;	
 	std::vector<int> v(5, 0);
 	for (int i = 0; i < 5; i++)
@@ -101,20 +88,5 @@ int main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "****************************************" << std::endl;
-	
-	std::cout << "test array char" << std::endl;
-	std::array<char, 10> ca = {'a', 'b', 'g', 'F', 'p', 'q', 'r', 's', 't', 'u'};
-	easyfind(ca, 'g');
-	try 
-	{
-		easyfind(ca, 'z');
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "****************************************" << std::endl;
-
-	
 	return (0);
 }
