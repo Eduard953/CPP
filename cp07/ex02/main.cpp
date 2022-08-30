@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:25:21 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/19 15:33:31 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:48:43 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(void)
 	Array<std::string> str(10);
 	Array<int> ints(10);
 	Array<float> floats(10);
+	Array<int> empt;
 	
 	str[0] = "Hello";
 	str[1] = "World";
@@ -37,7 +38,21 @@ int main(void)
 	floats[9] = 69.69;
 
 	std::cout << "=============================================" << std::endl;
+	std::cout << "Empty:" << std::endl;
+	std::cout << "Size of Array: " << empt.size() << std::endl;
+	try
+	{
+		std::cout << empt[0] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "array is empty " << e.what() << '\n';
+	}
+	
+
+	std::cout << "=============================================" << std::endl;
 	std::cout << "Strings:" << std::endl;
+	std::cout << "Size of Array: " << str.size() << std::endl;
 	std::cout << str[0] << std::endl;
 	std::cout << str[1] << std::endl;
 	std::cout << str[2] << std::endl;
@@ -45,6 +60,7 @@ int main(void)
 	
 	std::cout << "=============================================" << std::endl;
 	std::cout << "Integers:" << std::endl;
+	std::cout << "Size of Array: " << ints.size() << std::endl;
 	std::cout << ints[0] << std::endl;
 	std::cout << ints[1] << std::endl;
 	std::cout << ints[2] << std::endl;
@@ -52,6 +68,7 @@ int main(void)
 
 	std::cout << "=============================================" << std::endl;
 	std::cout << "Floats:" << std::endl;
+	std::cout << "Size of Array: " << floats.size() << std::endl;
 	std::cout << floats[0] << std::endl;
 	std::cout << floats[1] << std::endl;
 	std::cout << floats[2] << std::endl;
@@ -65,7 +82,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "test with out of scope index" << e.what() << '\n';
+		std::cerr << "test with out of scope index " << e.what() << '\n';
 	}
 	try
 	{
@@ -73,7 +90,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "test with out of scope index" << e.what() << '\n';
+		std::cerr << "test with out of scope index " << e.what() << '\n';
 	}
 	try
 	{
@@ -81,7 +98,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "test with out of scope index" << e.what() << '\n';
+		std::cerr << "test with out of scope index " << e.what() << '\n';
 	}
 	
 }

@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:12:06 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/19 15:30:23 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:44:05 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Array
 		// CONSTRUCTORS & DESTRUCTOR
 		Array()
 		{
-			this->_arr = new T[0];
+			this->_arr = new T[NULL];
 			this->_size = 0;
 		}
 		
