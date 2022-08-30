@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:41:15 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/05/19 13:52:45 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:28:13 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ void print(T a)
 {
 	std::cout << a << "; ";
 }
+
+// template< typename T >
+// void print(T a) { std::cout << a << std::endl; return; }
 
 #endif // ITER_HPP
